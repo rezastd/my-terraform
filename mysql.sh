@@ -8,7 +8,7 @@ done
 # install mysql
 apt-get update
 apt-get -y install mysql-server
-ufw enable
-ufw allow mysql
+ufw enable -y
+ufw allow mysql -y
 # make sure mysql is started
 systemctl restart mysql
