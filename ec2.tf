@@ -28,7 +28,7 @@ resource "aws_instance" "webserver" {
 
 resource "aws_instance" "dbserver" {
   ami           = lookup(var.AMI, var.AWS_REGION)
-  instance_type = "t3a.micro"
+  instance_type = "t2.micro"
   # VPC
   subnet_id = aws_subnet.prod_subnet_private_1a.id
   # Security Group
@@ -66,3 +66,6 @@ resource "aws_key_pair" "reza_keypair" {
   public_key = file(var.PUBLIC_KEY_PATH)
 }
 
+output "webserver_ip" {
+  value = ["${aws_instance.webserver.public_ip}"]
+}

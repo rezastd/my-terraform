@@ -1,9 +1,9 @@
 variable "AWS_REGION" {
   default = "us-east-1"
 }
-
+// create your key first by 'ssh-keygen -f yourkey'
 variable "PRIVATE_KEY_PATH" {
-  default = "reza_keypair"
+  default = "reza_keypair" 
 }
 
 variable "PUBLIC_KEY_PATH" {
