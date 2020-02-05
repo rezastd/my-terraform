@@ -1,6 +1,6 @@
 resource "aws_instance" "webserver" {
   ami           = lookup(var.AMI, var.AWS_REGION)
-  instance_type = "t3a.micro"
+  instance_type = "t2.micro"
   # VPC
   subnet_id = aws_subnet.prod_subnet_public_1a.id
   # Security Group
